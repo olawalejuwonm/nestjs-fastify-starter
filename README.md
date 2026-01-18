@@ -1,30 +1,39 @@
+# NestJS + Fastify Starter (Monorepo Ready)
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-  
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+A production-ready starter repository for building full-stack applications with [NestJS](https://github.com/nestjs/nest) and Fastify. This repository includes comprehensive documentation for transforming it into a monorepo structure with Next.js frontend and NestJS/Fastify backend.
+
+## 📚 Documentation
+
+This repository includes extensive documentation to help you build production-ready applications:
+
+- **[ARCHITECTURE.md](./ARCHITECTURE.md)** - Comprehensive architecture analysis and best practices for monorepo projects
+- **[MIGRATION_GUIDE.md](./MIGRATION_GUIDE.md)** - Step-by-step guide to transform this into a full monorepo
+- **[BEST_PRACTICES_CHECKLIST.md](./BEST_PRACTICES_CHECKLIST.md)** - Complete checklist of best practices for Next.js + NestJS projects
+
+## 🚀 Current Setup
+
+This starter currently includes:
+- NestJS 10.3.2 with TypeScript
+- Express HTTP adapter (can be migrated to Fastify)
+- Jest for testing
+- ESLint + Prettier for code quality
+- Basic project structure
+
+## 🎯 Recommended Architecture
+
+For production applications, we recommend:
+- **Monorepo Structure** - Using PNPM workspaces + Turborepo
+- **Fastify** - High-performance HTTP adapter (2-3x faster than Express)
+- **Next.js Frontend** - Modern React framework with App Router
+- **Shared Packages** - Type-safe shared code between frontend and backend
+
+See [ARCHITECTURE.md](./ARCHITECTURE.md) for detailed architecture documentation.
 
 ## Installation
 
@@ -58,16 +67,177 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## 📖 Getting Started
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### Quick Start (Current Setup)
 
-## Stay in touch
+```bash
+# Install dependencies
+npm install
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+# Development mode
+npm run start:dev
 
-## License
+# Production build
+npm run build
+npm run start:prod
+```
 
-  Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+### Migrate to Monorepo
+
+Follow the [MIGRATION_GUIDE.md](./MIGRATION_GUIDE.md) for step-by-step instructions to:
+1. Set up monorepo structure
+2. Add Fastify adapter
+3. Create Next.js frontend
+4. Add shared packages
+5. Configure build system (Turborepo)
+6. Set up CI/CD
+
+## 🏗️ Architecture Highlights
+
+### Why Monorepo?
+- **Type Safety** - Shared types between frontend and backend
+- **Code Reuse** - Common utilities and configurations
+- **Faster Development** - Synchronized changes across applications
+- **Better DX** - Single repository, easier dependency management
+
+### Why Fastify?
+- **Performance** - 2-3x faster than Express
+- **Schema Validation** - Built-in JSON schema validation
+- **TypeScript** - Better TypeScript integration
+- **Modern** - Active development and rich ecosystem
+
+### Why Next.js?
+- **Performance** - Built-in optimizations
+- **SEO** - Server-side rendering and static generation
+- **Developer Experience** - File-based routing, hot reload
+- **Production Ready** - Used by major companies
+
+## 📋 Best Practices
+
+Key best practices covered in our documentation:
+
+### Backend (NestJS + Fastify)
+- ✅ Modular architecture with feature-based modules
+- ✅ Configuration management with validation
+- ✅ Swagger/OpenAPI documentation
+- ✅ Global exception handling
+- ✅ Request validation with class-validator
+- ✅ Security best practices (Helmet, CORS, rate limiting)
+
+### Frontend (Next.js)
+- ✅ App Router with Server Components
+- ✅ Type-safe API client
+- ✅ Optimized images and code splitting
+- ✅ SEO optimization
+- ✅ Error boundaries and loading states
+
+### Shared Code
+- ✅ Shared TypeScript types
+- ✅ Common utilities and validators
+- ✅ Shared configuration files
+- ✅ Consistent linting and formatting
+
+See [BEST_PRACTICES_CHECKLIST.md](./BEST_PRACTICES_CHECKLIST.md) for complete checklist.
+
+## 🧪 Testing
+
+```bash
+# Unit tests
+npm run test
+
+# E2E tests
+npm run test:e2e
+
+# Test coverage
+npm run test:cov
+```
+
+## 🔍 Code Quality
+
+```bash
+# Linting
+npm run lint
+
+# Format code
+npm run format
+```
+
+## 📦 Project Structure (After Migration)
+
+```
+├── apps/
+│   ├── backend/          # NestJS + Fastify backend
+│   └── frontend/         # Next.js frontend
+├── packages/
+│   ├── shared-types/     # Shared TypeScript types
+│   ├── shared-utils/     # Common utilities
+│   └── shared-config/    # Shared configurations
+├── docs/                 # Documentation
+├── scripts/              # Build and utility scripts
+└── .github/
+    └── workflows/        # CI/CD pipelines
+```
+
+## 🚢 Deployment
+
+### Backend Deployment Options
+- **Docker** - Containerized deployment
+- **Cloud Run** - Serverless containers
+- **AWS ECS/EKS** - Container orchestration
+- **Kubernetes** - Self-hosted clusters
+
+### Frontend Deployment Options
+- **Vercel** - Optimal for Next.js
+- **Netlify** - Alternative serverless platform
+- **CloudFlare Pages** - Edge deployment
+- **Docker** - Self-hosted option
+
+## 🔐 Security
+
+Security considerations covered in documentation:
+- Input validation and sanitization
+- SQL injection prevention
+- XSS protection
+- CSRF tokens
+- Rate limiting
+- Helmet security headers
+- Proper CORS configuration
+- Secrets management
+
+## 📈 Performance
+
+Performance optimizations included:
+- Fastify's high performance
+- Caching strategies
+- Database query optimization
+- Connection pooling
+- Next.js automatic optimizations
+- Image optimization
+- Code splitting
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read our contributing guidelines before submitting PRs.
+
+## 📄 License
+
+This project is [MIT licensed](LICENSE).
+
+## 🙏 Acknowledgments
+
+- [NestJS](https://nestjs.com/) - A progressive Node.js framework
+- [Fastify](https://www.fastify.io/) - Fast and low overhead web framework
+- [Next.js](https://nextjs.org/) - The React Framework for Production
+- [Turborepo](https://turbo.build/) - High-performance build system
+
+## 📞 Support
+
+For questions and support:
+- Review the [ARCHITECTURE.md](./ARCHITECTURE.md) documentation
+- Check the [MIGRATION_GUIDE.md](./MIGRATION_GUIDE.md) for setup help
+- Open an issue for bugs or feature requests
+
+---
+
+**Ready to build something amazing? Start by reading our [Architecture Guide](./ARCHITECTURE.md)!** 🎉
